@@ -21,7 +21,7 @@ export default function AdminLogin() {
         if (error) {
             setError(error.message);
         } else {
-            router.push('/admin');
+            window.location.href = '/admin';
         }
     };
 

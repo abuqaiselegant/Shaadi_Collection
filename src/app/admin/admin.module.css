@@ -227,5 +227,11 @@
 }
 
 .subNavLink:hover {
-    background: var(--bg-secondary);
+    background: var(--ivory-2);
+}
+
+.subNavDisabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useStore } from '@/context/StoreContext';
 import { supabase } from '@/lib/supabase';
@@ -97,15 +96,15 @@ export default function AdminPage() {
 
             {/* Sub-page nav */}
             <div className={styles.subNav}>
-                <Link href="/admin/categories" className={styles.subNavLink}>
+                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
                     <LayoutGrid size={18} /> Categories
-                </Link>
-                <Link href="/admin/inquiries" className={styles.subNavLink}>
+                </span>
+                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
                     <MessageSquare size={18} /> Inquiries
-                </Link>
-                <Link href="/admin/analytics" className={styles.subNavLink}>
+                </span>
+                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
                     <BarChart2 size={18} /> Analytics
-                </Link>
+                </span>
             </div>
 
             {/* Add Product Modal */}
@@ -237,7 +236,7 @@ export default function AdminPage() {
                     </tbody>
                 </table>
                 {products.length === 0 && (
-                    <p style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-secondary)' }}>
+                    <p style={{ textAlign: 'center', padding: '2rem', color: 'var(--muted)' }}>
                         No products yet. Add your first product above.
                     </p>
                 )}

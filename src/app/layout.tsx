@@ -5,8 +5,11 @@ import Footer from "@/components/Footer";
 import { StoreProvider } from "@/context/StoreContext";
 
 export const metadata: Metadata = {
-  title: "Shaadi Collection — Gaya's Wedding Atelier",
+  title: "Shaadi Collection",
   description: "Celebration essentials — stage decor, gift wrappers, cash garlands, envelopes & reception items. Crafted in Gaya, Bihar since 2010.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

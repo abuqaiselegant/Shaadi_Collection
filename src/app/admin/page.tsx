@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useStore } from '@/context/StoreContext';
 import { supabase } from '@/lib/supabase';
@@ -96,15 +97,15 @@ export default function AdminPage() {
 
             {/* Sub-page nav */}
             <div className={styles.subNav}>
-                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
+                <Link href="/admin/categories" className={styles.subNavLink}>
                     <LayoutGrid size={18} /> Categories
-                </span>
-                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
+                </Link>
+                <Link href="/admin/inquiries" className={styles.subNavLink}>
                     <MessageSquare size={18} /> Inquiries
-                </span>
-                <span className={`${styles.subNavLink} ${styles.subNavDisabled}`} title="Coming soon">
+                </Link>
+                <Link href="/admin/analytics" className={styles.subNavLink}>
                     <BarChart2 size={18} /> Analytics
-                </span>
+                </Link>
             </div>
 
             {/* Add Product Modal */}

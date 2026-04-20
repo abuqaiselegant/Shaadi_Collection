@@ -1,0 +1,135 @@
+.back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--f-mono); font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 28px;
+    transition: color 200ms;
+}
+.back:hover { color: var(--maroon); }
+
+.header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 28px; gap: 16px;
+}
+.title {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: 42px; color: var(--ink); margin-bottom: 4px;
+}
+.count {
+    font-family: var(--f-mono); font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+
+/* Add form */
+.addForm {
+    border: 1px solid var(--gold);
+    background: var(--ivory-2); padding: 28px;
+    margin-bottom: 28px;
+}
+.addTitle {
+    font-family: var(--f-display); font-size: 22px; font-weight: 400;
+    color: var(--maroon); margin-bottom: 18px;
+}
+.formRow { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.formField { flex: 1; min-width: 180px; }
+.formField label {
+    display: block; font-family: var(--f-mono); font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 8px;
+}
+.formField input {
+    width: 100%; padding: 10px 12px;
+    border: 1px solid var(--line); background: var(--ivory);
+    font-size: 13px; outline: none; transition: border-color 200ms;
+    font-family: var(--f-sans); color: var(--ink);
+}
+.formField input:focus { border-color: var(--gold); }
+.hint { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; }
+.formActions { display: flex; flex-direction: column; gap: 8px; min-width: 120px; padding-bottom: 2px; }
+.formError { font-size: 12px; color: var(--maroon); margin-bottom: 4px; }
+
+/* Toolbar */
+.toolbar {
+    display: flex; gap: 16px; align-items: center;
+    margin-bottom: 24px; flex-wrap: wrap;
+}
+.searchWrap {
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid var(--line); padding: 10px 14px;
+    background: var(--ivory); flex: 1; min-width: 200px;
+    color: var(--ink-soft);
+}
+.searchInput {
+    border: none; background: none; outline: none;
+    font-size: 13px; color: var(--ink); width: 100%;
+    font-family: var(--f-sans);
+}
+.sortBtns { display: flex; gap: 6px; }
+.sortBtn {
+    padding: 8px 14px; border: 1px solid var(--line);
+    background: var(--ivory); font-size: 11px;
+    font-family: var(--f-mono); letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft);
+    cursor: pointer; transition: all 200ms;
+}
+.sortBtn:hover { border-color: var(--gold); color: var(--ink); }
+.sortActive { border-color: var(--maroon); color: var(--maroon); background: rgba(107,16,40,0.04); }
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+    border: 1px solid var(--line);
+}
+.card {
+    background: var(--ivory); padding: 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background 200ms;
+}
+.card:hover { background: var(--ivory-2); }
+.cardTop {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 16px;
+}
+.catName {
+    font-family: var(--f-display); font-size: 22px;
+    color: var(--ink); margin-bottom: 4px;
+}
+.catSlug {
+    font-family: var(--f-mono); font-size: 10px;
+    letter-spacing: 0.16em; color: var(--gold-deep);
+    text-transform: uppercase;
+}
+.deleteBtn {
+    background: none; border: none; color: var(--muted);
+    cursor: pointer; padding: 4px; transition: color 200ms;
+    flex-shrink: 0;
+}
+.deleteBtn:hover { color: var(--maroon); }
+.cardFoot {
+    display: flex; justify-content: space-between;
+    align-items: center; padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+}
+.prodCount {
+    font-family: var(--f-mono); font-size: 11px;
+    color: var(--muted); letter-spacing: 0.1em;
+}
+.viewLink {
+    font-size: 11px; color: var(--gold-deep);
+    text-decoration: none; transition: color 200ms;
+}
+.viewLink:hover { color: var(--maroon); }
+
+.empty {
+    padding: 80px 20px; text-align: center;
+    border: 1px dashed var(--line); color: var(--muted); font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .header { flex-direction: column; align-items: flex-start; }
+    .toolbar { flex-direction: column; align-items: stretch; }
+    .formRow { flex-direction: column; }
+}

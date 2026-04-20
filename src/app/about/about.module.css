@@ -1,106 +1,217 @@
-.page {
-    min-height: 80vh;
-}
-
+/* ── Hero ── */
 .hero {
-    background-color: var(--color-maroon);
-    color: var(--color-white);
-    padding: 6rem 0 4rem;
-    text-align: center;
+    position: relative;
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 100px 0 80px;
+    overflow: hidden;
 }
-
+.heroOrn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    pointer-events: none; user-select: none;
+}
+.heroInner { position: relative; z-index: 1; max-width: 680px; }
 .heroTitle {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px); line-height: 1;
+    color: var(--ivory); margin: 0 0 20px;
+}
+.heroTitle em { font-style: italic; color: var(--gold-soft); }
+.heroSub {
+    color: rgba(251,246,236,0.75); font-size: 16px;
+    line-height: 1.7; max-width: 520px;
 }
 
-.heroSubtitle {
-    font-size: 1.2rem;
-    opacity: 0.85;
+/* ── Quranic Quote ── */
+.quoteSection {
+    background: var(--maroon);
+    padding: 60px 0;
+}
+.quoteCard {
+    max-width: 760px; margin: 0 auto; text-align: center;
+}
+.quoteArabic {
+    font-family: var(--f-script); font-size: clamp(22px, 3vw, 32px);
+    color: var(--gold-soft); line-height: 1.8; margin-bottom: 20px;
+    direction: rtl;
+}
+.quoteTranslation {
+    font-family: var(--f-display); font-style: italic;
+    font-size: clamp(17px, 2vw, 22px); color: rgba(251,246,236,0.9);
+    line-height: 1.6; margin-bottom: 12px;
+}
+.quoteRef {
+    font-family: var(--f-mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.7;
 }
 
-.sectionTitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-maroon);
-    margin-bottom: 1.5rem;
-}
-
-/* Story */
+/* ── Story ── */
+.storySection { padding: 100px 0; }
 .storyGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: start;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 80px; align-items: center;
 }
-
+.storyVisual { position: relative; }
+.storyFrame {
+    aspect-ratio: 3/4; position: relative;
+    border: 1px solid var(--gold); overflow: hidden;
+}
+.storyPlaceholder {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(135deg,
+        rgba(107,16,40,0.15) 0 12px, rgba(107,16,40,0.07) 12px 24px), var(--cream);
+}
+.storyTag {
+    position: absolute; left: 16px; bottom: 16px;
+    display: flex; flex-direction: column; gap: 2px;
+}
+.storyTagKey {
+    font-family: var(--f-mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep);
+}
+.storyTagVal {
+    font-family: var(--f-display); font-size: 20px;
+    font-style: italic; color: var(--ink);
+}
+.storyH2 {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(32px, 4vw, 52px); line-height: 1.05;
+    margin: 12px 0 22px;
+}
+.storyH2 em { font-style: italic; color: var(--maroon); }
 .storyText p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-    font-size: 1.05rem;
+    color: var(--ink-soft); font-size: 15px; line-height: 1.8;
+    margin-bottom: 16px;
 }
 
-.storyValues {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+/* ── Hadith strip ── */
+.hadithSection {
+    background: var(--ivory-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 52px 0;
+}
+.hadithInner {
+    max-width: 680px; margin: 0 auto; text-align: center;
+}
+.hadithArabic {
+    font-family: var(--f-script); font-size: 52px;
+    color: var(--maroon); margin-bottom: 16px;
+}
+.hadithText {
+    font-family: var(--f-display); font-style: italic;
+    font-size: 18px; color: var(--ink-soft); line-height: 1.65;
 }
 
+/* ── Values ── */
+.valuesSection { padding: 100px 0; }
+.valuesH2 {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(32px, 4vw, 52px); line-height: 1;
+    margin: 10px 0 48px;
+}
+.valuesH2 em { font-style: italic; color: var(--maroon); }
+.valuesGrid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; border: 1px solid var(--line);
+}
 .valueCard {
-    background: var(--color-white);
-    border: 1px solid var(--color-gold-light);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    background: var(--ivory);
+    transition: background 300ms;
+}
+.valueCard:last-child { border-right: none; }
+.valueCard:hover { background: var(--ivory-2); }
+.valueArabic {
+    font-family: var(--f-script); font-size: 44px;
+    color: var(--gold-deep); margin-bottom: 10px;
+}
+.valueMeta {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 16px;
+}
+.valueTranslit {
+    font-family: var(--f-display); font-style: italic;
+    font-size: 18px; color: var(--maroon);
+}
+.valueDot { color: var(--gold); }
+.valueMeaning {
+    font-family: var(--f-mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft);
+}
+.valueText { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
+
+/* ── Ceremonies ── */
+.ceremoniesSection {
+    background: var(--ink); color: var(--ivory);
+    padding: 80px 0; text-align: center;
+}
+.ceremoniesH2 {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(30px, 4vw, 52px); line-height: 1;
+    color: var(--ivory); margin: 10px 0 40px;
+}
+.ceremoniesH2 em { font-style: italic; color: var(--gold-soft); }
+.ceremoniesPills {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-bottom: 28px;
+}
+.ceremonyPill {
+    padding: 8px 20px;
+    border: 1px solid rgba(201,162,75,0.35);
+    color: var(--gold-soft);
+    font-family: var(--f-display); font-style: italic;
+    font-size: 17px; letter-spacing: 0.02em;
+    transition: all 240ms;
+    cursor: default;
+}
+.ceremonyPill:hover {
+    background: rgba(201,162,75,0.1);
+    border-color: var(--gold);
+}
+.ceremoniesSub {
+    color: rgba(251,246,236,0.6); font-size: 14px;
+    line-height: 1.7; max-width: 480px; margin: 0 auto;
 }
 
-.valueIcon {
-    display: block;
-    color: var(--color-gold);
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
+/* ── Closing quote ── */
+.closingSection { padding: 100px 0; }
+.closingCard {
+    max-width: 720px; margin: 0 auto; text-align: center;
+    padding: 56px 40px;
+    border: 1px solid var(--line);
+    background: var(--ivory-2);
+    position: relative;
+}
+.closingCard::before {
+    content: '✦';
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--ivory-2); padding: 0 12px;
+    color: var(--gold); font-size: 16px;
+}
+.closingArabic {
+    font-family: var(--f-script); font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--maroon); line-height: 1.9; margin-bottom: 20px;
+    direction: rtl;
+}
+.closingTranslation {
+    font-family: var(--f-display); font-style: italic;
+    font-size: clamp(16px, 2vw, 20px); color: var(--ink-soft);
+    line-height: 1.65; margin-bottom: 12px;
+}
+.closingRef {
+    font-family: var(--f-mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-deep); opacity: 0.75;
 }
 
-.valueCard h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-black);
-    margin-bottom: 0.5rem;
-}
-
-.valueCard p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* What We Offer */
-.categoriesSection {
-    background-color: var(--bg-secondary);
-    padding: 5rem 0;
-}
-
-.offerGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.offerItem {
-    background: var(--color-white);
-    border: 1px solid var(--color-gold-light);
-    border-radius: var(--radius-full);
-    padding: 0.75rem 1.75rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-maroon);
-}
-
-@media (min-width: 900px) {
-    .storyGrid {
-        grid-template-columns: 1.2fr 1fr;
-    }
+@media (max-width: 900px) {
+    .storyGrid { grid-template-columns: 1fr; gap: 40px; }
+    .storyVisual { display: none; }
+    .valuesGrid { grid-template-columns: 1fr; }
+    .valueCard { border-right: none; border-bottom: 1px solid var(--line); }
+    .valueCard:last-child { border-bottom: none; }
 }

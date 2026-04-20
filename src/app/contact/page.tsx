@@ -1,80 +1,113 @@
 import styles from './contact.module.css';
-import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
 export const metadata = {
-    title: 'Contact Us — Shaadi Collection',
-    description: 'Get in touch with Shaadi Collection. We are based in Gaya, Bihar.',
+    title: 'Contact — Shaadi Collection',
+    description: 'Reach out to Shaadi Collection, Gaya. WhatsApp, phone, email and address.',
 };
 
-const WHATSAPP_NUMBER = '918084098979';
+const WHATSAPP = '918084098979';
 
 export default function ContactPage() {
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I'd like to enquire about your wedding decoration collection.")}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Assalamu Alaikum, I'd like to enquire about your wedding decoration collection.")}`;
 
     return (
-        <div className="container section">
-            <div className={styles.header}>
-                <h1 className={styles.title}>Get in Touch</h1>
-                <p className={styles.subtitle}>
-                    Have a question or want to discuss your wedding? We'd love to hear from you.
-                </p>
+        <div>
+            {/* ── Header ── */}
+            <section className={styles.head}>
+                <div className="container">
+                    <div className="section-eyebrow">
+                        <span className="gold-rule"><span className="eyebrow">Reach Us</span></span>
+                    </div>
+                    <h1 className={styles.headTitle}>
+                        Let&apos;s plan your <em>celebration</em> together
+                    </h1>
+                    <p className={styles.headSub}>
+                        We are a family business — not a call centre. Every inquiry goes directly
+                        to the person who will help you.
+                    </p>
+                </div>
+            </section>
+
+            {/* ── Quote ── */}
+            <div className={styles.quoteStrip}>
+                <div className="container">
+                    <span className={styles.quoteArabic}>وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ</span>
+                    <span className={styles.quoteTransl}>"Cooperate in righteousness and piety." — Al-Ma'idah 5:2</span>
+                </div>
             </div>
 
-            <div className={styles.layout}>
-                {/* Contact Details */}
-                <div className={styles.details}>
-                    <div className={styles.detailItem}>
-                        <div className={styles.iconWrap}><Phone size={20} /></div>
-                        <div>
-                            <h3>Phone & WhatsApp</h3>
-                            <a href={`tel:+918084098979`}>+91 80840 98979</a>
+            {/* ── Body ── */}
+            <div className={`container ${styles.body}`}>
+
+                {/* Contact cards */}
+                <div className={styles.cards}>
+                    <a href={`tel:+918084098979`} className={styles.card}>
+                        <div className={styles.cardIcon}>
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z" />
+                            </svg>
                         </div>
+                        <div className={styles.cardLabel}>Phone & WhatsApp</div>
+                        <div className={styles.cardValue}>+91 80840 98979</div>
+                        <div className={styles.cardHint}>Tap to call</div>
+                    </a>
+
+                    <a href="mailto:aqaisnotts@gmail.com" className={styles.card}>
+                        <div className={styles.cardIcon}>
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div className={styles.cardLabel}>Email</div>
+                        <div className={styles.cardValue}>aqaisnotts@gmail.com</div>
+                        <div className={styles.cardHint}>Tap to email</div>
+                    </a>
+
+                    <div className={styles.card}>
+                        <div className={styles.cardIcon}>
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div className={styles.cardLabel}>Visit Us</div>
+                        <div className={styles.cardValue}>Opposite Lingi House</div>
+                        <div className={styles.cardHint}>Chhatta Masjid, GB Road · Gaya 823001</div>
                     </div>
 
-                    <div className={styles.detailItem}>
-                        <div className={styles.iconWrap}><Mail size={20} /></div>
-                        <div>
-                            <h3>Email</h3>
-                            <a href="mailto:aqaisnotts@gmail.com">aqaisnotts@gmail.com</a>
+                    <div className={`${styles.card} ${styles.cardMuted}`}>
+                        <div className={styles.cardIcon}>
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
                         </div>
-                    </div>
-
-                    <div className={styles.detailItem}>
-                        <div className={styles.iconWrap}><MapPin size={20} /></div>
-                        <div>
-                            <h3>Address</h3>
-                            <p>Opposite Lingi House, Chhatta Masjid<br />GB Road, Gaya, Bihar — 823001</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.detailItem}>
-                        <div className={styles.iconWrap}><Instagram size={20} /></div>
-                        <div>
-                            <h3>Instagram</h3>
-                            <p className={styles.comingSoon}>Coming Soon</p>
-                        </div>
+                        <div className={styles.cardLabel}>Instagram</div>
+                        <div className={styles.cardValue} style={{ fontStyle: 'italic', fontSize: 15 }}>Coming Soon</div>
+                        <div className={styles.cardHint}>@shaadicollection</div>
                     </div>
                 </div>
 
                 {/* WhatsApp CTA */}
-                <div className={styles.ctaCard}>
-                    <h2>Chat with Us on WhatsApp</h2>
-                    <p>
-                        The quickest way to reach us. Ask about availability, pricing, or anything
-                        about your upcoming wedding.
+                <div className={styles.cta}>
+                    <div className={styles.ctaOrn} aria-hidden="true">✦</div>
+                    <div className={styles.ctaLabel}>Fastest Response</div>
+                    <h2 className={styles.ctaTitle}>
+                        Message us on <em>WhatsApp</em>
+                    </h2>
+                    <p className={styles.ctaText}>
+                        Planning a Baraat? Need a full setup for Walima? Tell us your occasion,
+                        your date, and your city — we will put together options for you.
                     </p>
-                    <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`btn btn-primary ${styles.whatsappBtn}`}
-                    >
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.waBtn}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2a10 10 0 0 0-8.53 15.24L2 22l4.9-1.42A10 10 0 1 0 12 2zm5.47 14.05c-.23.65-1.34 1.25-1.85 1.28-.47.03-1.06.04-1.7-.11-.39-.1-.9-.25-1.54-.53-2.71-1.17-4.48-3.9-4.62-4.08-.14-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.27c.25-.27.55-.33.73-.33l.52.01c.17.01.39-.06.62.47.23.55.78 1.91.85 2.05.07.14.12.3.02.48-.1.18-.15.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.12.56.17.28.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.34 1.46.28.14.44.12.61-.08.16-.2.7-.82.89-1.1.19-.27.38-.23.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.32.07.12.07.68-.16 1.32z"/>
                         </svg>
-                        Start a Chat
+                        Start a Chat — it's free
                     </a>
-                    <p className={styles.hours}>We typically reply within a few hours</p>
+                    <p className={styles.ctaReply}>بِإِذْنِ اللهِ — We reply within a few hours, insha'Allah</p>
                 </div>
             </div>
         </div>

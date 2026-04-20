@@ -94,7 +94,7 @@
     color: rgba(251,246,236,0.6);
 }
 @media (max-width: 960px) { .heroContent { grid-template-columns: 1fr; padding: 100px 32px 60px; gap: 40px; } }
-@media (max-width: 600px) { .heroSide { display: none; } }
+@media (max-width: 600px) { .heroSide { display: none; } .heroContent { padding: 80px 20px 48px; } }
 
 /* ======= MARQUEE ======= */
 .strip {
@@ -102,10 +102,10 @@
     padding: 18px 0; overflow: hidden; white-space: nowrap; background: var(--ivory-2);
 }
 .marquee {
-    display: inline-flex; gap: 48px;
+    display: inline-flex; gap: clamp(24px, 6vw, 48px);
     animation: marquee 40s linear infinite;
-    font-family: var(--f-display); font-size: 28px; color: var(--maroon);
-    font-style: italic; letter-spacing: 0.02em; padding-right: 48px;
+    font-family: var(--f-display); font-size: clamp(18px, 4vw, 28px); color: var(--maroon);
+    font-style: italic; letter-spacing: 0.02em; padding-right: clamp(24px, 6vw, 48px);
 }
 .dot { display: inline-block; width: 6px; height: 6px; border-radius: 999px; background: var(--gold); margin: 0 4px; vertical-align: middle; }
 .strip:hover .marquee { animation-play-state: paused; }
@@ -134,6 +134,8 @@
 .catName { font-family: var(--f-display); font-size: 26px; font-style: italic; line-height: 1.05; }
 @media (max-width: 900px) { .catGrid { grid-template-columns: 1fr 1fr; } .catCard:nth-child(1) { grid-row: auto; aspect-ratio: 4/5; } }
 @media (max-width: 560px) { .catGrid { grid-template-columns: 1fr; } .sectionHead { grid-template-columns: 1fr; } .sectionSide { display: none; } }
+@media (max-width: 900px) { .twoCol { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 560px) { .ceremoniesGrid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); } }
 
 /* ======= CEREMONIES RIBBON ======= */
 .ceremoniesSection { background: var(--ink); color: var(--ivory); position: relative; overflow: hidden; }

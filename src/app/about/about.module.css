@@ -96,7 +96,7 @@
     max-width: 680px; margin: 0 auto; text-align: center;
 }
 .hadithArabic {
-    font-family: var(--f-script); font-size: 52px;
+    font-family: var(--f-script); font-size: clamp(32px, 8vw, 52px);
     color: var(--maroon); margin-bottom: 16px;
 }
 .hadithText {
@@ -214,4 +214,15 @@
     .valuesGrid { grid-template-columns: 1fr; }
     .valueCard { border-right: none; border-bottom: 1px solid var(--line); }
     .valueCard:last-child { border-bottom: none; }
+    .hero { padding: 70px 0 60px; }
+    .ceremoniesPills { gap: 8px; }
+    .ceremonyPill { font-size: 15px; padding: 7px 16px; }
+    .closingCard { padding: 40px 24px; }
+}
+@media (max-width: 560px) {
+    .quoteCard { text-align: right; }
+    .hadithInner { text-align: right; }
+    .valuesSection { padding: 60px 0; }
+    .storySection { padding: 60px 0; }
+    .closingSection { padding: 60px 0; }
 }

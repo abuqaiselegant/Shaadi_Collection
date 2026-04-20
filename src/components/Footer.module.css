@@ -20,7 +20,7 @@
 
 .brandType {
     font-family: var(--f-display);
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 36px);
     color: var(--ivory);
     line-height: 1;
     margin-bottom: 12px;
@@ -36,7 +36,7 @@
 
 .socials { display: flex; gap: 8px; margin-top: 18px; }
 .socialBtn {
-    width: 36px; height: 36px;
+    width: 44px; height: 44px;
     display: grid; place-items: center;
     border: 1px solid rgba(251,246,236,0.2);
     border-radius: 999px;

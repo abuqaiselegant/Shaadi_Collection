@@ -13,7 +13,7 @@
 }
 .title {
     font-family: var(--f-display); font-weight: 400;
-    font-size: 42px; color: var(--ink); margin-bottom: 4px;
+    font-size: clamp(28px, 6vw, 42px); color: var(--ink); margin-bottom: 4px;
 }
 .count {
     font-family: var(--f-mono); font-size: 11px;
@@ -31,7 +31,7 @@
     color: var(--maroon); margin-bottom: 18px;
 }
 .formRow { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
-.formField { flex: 1; min-width: 180px; }
+.formField { flex: 1; min-width: 0; }
 .formField label {
     display: block; font-family: var(--f-mono); font-size: 10px;
     letter-spacing: 0.14em; text-transform: uppercase;

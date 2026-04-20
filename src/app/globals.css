@@ -130,7 +130,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---- Buttons ---- */
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 26px;
+  padding: 15px 26px;
+  min-height: 44px;
   background: var(--maroon);
   color: var(--ivory);
   border: 1px solid var(--maroon);
@@ -193,7 +194,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ---- Icon button ---- */
 .icon-btn {
-  width: 38px; height: 38px;
+  width: 44px; height: 44px;
   display: grid; place-items: center;
   background: transparent;
   border: 1px solid var(--line);
@@ -338,10 +339,12 @@ ul { list-style: none; margin: 0; padding: 0; }
   border: 1px solid var(--line);
   background: var(--ivory);
   border-radius: var(--r-sm);
-  transition: all 220ms; font-size: 14px;
+  transition: all 220ms; font-size: 16px;
 }
 .field input:focus, .field textarea:focus, .field select:focus {
   outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,75,0.12);
 }
 .field textarea { min-height: 90px; resize: vertical; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .section { padding: 70px 0; } }

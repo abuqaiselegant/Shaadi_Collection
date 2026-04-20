@@ -93,3 +93,11 @@
 .copiedNow .copied { opacity: 1; }
 
 @media (max-width: 900px) { .pdGrid { grid-template-columns: 1fr; gap: 40px; } .pdInfo { position: static; } }
+@media (max-width: 560px) {
+    .productPage { padding: 24px 0 80px; }
+    .pdThumbs { grid-template-columns: repeat(3, 1fr); }
+    .pdActions { flex-wrap: wrap; }
+    .pdActions .btn { flex: 1; min-width: 0; }
+    .likeBtn, .shareBtn { width: 48px; height: 48px; }
+    .price { font-size: 32px; }
+}

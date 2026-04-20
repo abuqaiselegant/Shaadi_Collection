@@ -98,7 +98,7 @@ function Hero({ onCTA }: { onCTA: () => void }) {
                 setHeadIdx(i => (i + 1) % HEADLINES.length);
                 setVisible(true);
             }, 600);
-        }, 10000);
+        }, 5000);
         return () => clearInterval(interval);
     }, []);
 

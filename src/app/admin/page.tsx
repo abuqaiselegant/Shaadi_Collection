@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useStore } from '@/context/StoreContext';
+import { supabase } from '@/lib/supabase';
 import * as XLSX from 'xlsx';
-import { Plus, Trash2, Download, Save, X, LayoutGrid, MessageSquare, BarChart2, ImageIcon, Video } from 'lucide-react';
+import { Plus, Trash2, Download, Save, X, LayoutGrid, MessageSquare, BarChart2, ImageIcon, Video, LogOut } from 'lucide-react';
 import styles from './admin.module.css';
 
 interface NewProductForm {
@@ -16,7 +18,13 @@ interface NewProductForm {
 }
 
 export default function AdminPage() {
+    const router = useRouter();
     const { products, categories, loading, addProduct, deleteProduct, updateProduct } = useStore();
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        router.push('/admin/login');
+    };
     const [isAdding, setIsAdding] = useState(false);
     const [saving, setSaving] = useState(false);
     const [imageFiles, setImageFiles] = useState<File[]>([]);
@@ -75,11 +83,14 @@ export default function AdminPage() {
             <div className={styles.header}>
                 <h1 className={styles.title}>Admin Dashboard</h1>
                 <div className={styles.actions}>
-                    <button className="btn btn-secondary" onClick={handleExport}>
-                        <Download size={18} /> Export
+                    <button className="btn ghost" onClick={handleExport}>
+                        <Download size={16} /> Export
                     </button>
-                    <button className="btn btn-primary" onClick={() => setIsAdding(true)}>
-                        <Plus size={18} /> Add Product
+                    <button className="btn" onClick={() => setIsAdding(true)}>
+                        <Plus size={16} /> Add Product
+                    </button>
+                    <button className={styles.logoutBtn} onClick={handleLogout} title="Logout">
+                        <LogOut size={16} /> Logout
                     </button>
                 </div>
             </div>

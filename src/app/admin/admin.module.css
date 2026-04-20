@@ -99,9 +99,29 @@
 }
 
 .closeBtn {
-    background: none;
-    color: var(--text-secondary);
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    background: var(--ivory-2);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: all 200ms;
+    flex-shrink: 0;
 }
+.closeBtn:hover { background: var(--maroon); color: var(--ivory); border-color: var(--maroon); }
+
+.logoutBtn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    color: var(--ink-soft);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+.logoutBtn:hover { border-color: var(--maroon); color: var(--maroon); }
 
 .formGroup {
     margin-bottom: 1rem;

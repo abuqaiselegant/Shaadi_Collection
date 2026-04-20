@@ -32,11 +32,23 @@
 .logoType {
     font-family: var(--f-display);
     font-size: 22px;
+    font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--ink);
     line-height: 1;
+    background: linear-gradient(90deg, var(--ink) 0%, var(--gold-deep) 50%, var(--ink) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoShimmer 4s linear infinite;
 }
-.logoType em { font-style: italic; color: var(--gold-deep); font-weight: 400; }
+.logoType em { font-style: italic; font-weight: 600; }
+
+@keyframes logoShimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
 
 /* Desktop links */
 .links { display: flex; gap: 4px; justify-content: center; }

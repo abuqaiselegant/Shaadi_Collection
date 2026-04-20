@@ -75,10 +75,34 @@ function WeddingSketch() {
     );
 }
 
+const HEADLINES = [
+    { line1: 'For the moments', em: 'your family', line2: 'will never forget', urdu: false },
+    { line1: 'Because some days', em: 'deserve to last', line2: 'forever', urdu: false },
+    { line1: 'Where every', em: 'celebration', line2: 'becomes an heirloom', urdu: false },
+    { line1: 'ہر', em: 'شادی', line2: 'کو سجاؤ، یادگار بناؤ', urdu: true },
+    { line1: 'خوشیوں کو', em: 'خوبصورتی', line2: 'سے سجائیں', urdu: true },
+];
+
 /* ---- Hero section ---- */
 function Hero({ onCTA }: { onCTA: () => void }) {
     const [open, setOpen] = useState(false);
+    const [headIdx, setHeadIdx] = useState(0);
+    const [visible, setVisible] = useState(true);
+
     useEffect(() => { const t = setTimeout(() => setOpen(true), 300); return () => clearTimeout(t); }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setVisible(false);
+            setTimeout(() => {
+                setHeadIdx(i => (i + 1) % HEADLINES.length);
+                setVisible(true);
+            }, 600);
+        }, 30000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const h = HEADLINES[headIdx];
 
     return (
         <section className={`${styles.hero} ${open ? styles.heroOpen : ''}`}>
@@ -101,9 +125,14 @@ function Hero({ onCTA }: { onCTA: () => void }) {
                             <span className="eyebrow" style={{ color: 'var(--gold-soft)' }}>Est. 2010 · Gaya, Bihar</span>
                         </span>
                     </div>
-                    <h1 className={styles.heroTitle}>
-                        Every celebration<br />deserves a <em>keepsake</em>
+                    <h1 className={`${styles.heroTitle} ${h.urdu ? styles.heroTitleUrdu : ''} ${visible ? styles.headIn : styles.headOut}`}>
+                        {h.line1} <em>{h.em}</em>{h.line2 ? <><br />{h.line2}</> : null}
                     </h1>
+                    <div className={styles.headDots}>
+                        {HEADLINES.map((_, i) => (
+                            <span key={i} className={`${styles.headDot} ${i === headIdx ? styles.headDotActive : ''}`} />
+                        ))}
+                    </div>
                     <p className={styles.heroSub}>
                         From stage drapes to shagun envelopes, cash garlands to walima favours — curated essentials for baraat, manjha, haldi, mehndi, nikah, walima, birthdays & inaugurations.
                     </p>

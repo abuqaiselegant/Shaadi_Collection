@@ -54,7 +54,7 @@ const Footer = () => {
                     <ul className={styles.colLinks}>
                         <li><Link href="/about">Our Story</Link></li>
                         <li><Link href="/contact">Custom Orders</Link></li>
-                        <li><Link href="/contact">Bulk Enquiries</Link></li>
+                        <li><a href={`https://wa.me/918084098979?text=${encodeURIComponent("Assalamu Alaikum,\n\nI am interested in a bulk order from Shaadi Collection.\n\nPlease share details on pricing and availability.\n\nJazakallahu Khayran.")}`} target="_blank" rel="noopener noreferrer">Bulk Enquiries</a></li>
                         <li><Link href="/catalog">Browse Catalog</Link></li>
                     </ul>
                 </div>

@@ -1,0 +1,135 @@
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--color-maroon);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contact details */
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detailItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.iconWrap {
+    width: 44px;
+    height: 44px;
+    background: rgba(109, 15, 37, 0.08);
+    color: var(--color-maroon);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.detailItem h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.detailItem a {
+    color: var(--color-black);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.detailItem a:hover {
+    color: var(--color-maroon);
+}
+
+.detailItem p {
+    color: var(--color-black);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.comingSoon {
+    color: var(--text-secondary) !important;
+    font-style: italic;
+}
+
+/* WhatsApp CTA card */
+.ctaCard {
+    background: var(--color-maroon);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.ctaCard h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.ctaCard p {
+    opacity: 0.85;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.whatsappBtn {
+    display: flex !important;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366 !important;
+    border-color: #25D366 !important;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+}
+
+.whatsappBtn:hover {
+    background: #1ebe5d !important;
+}
+
+.hours {
+    font-size: 0.85rem !important;
+    opacity: 0.65 !important;
+    margin-top: -0.25rem;
+}
+
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}

@@ -1,0 +1,95 @@
+.productPage { padding: 40px 0 120px; }
+
+.backLink {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--ink-soft); font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 32px; transition: color 220ms;
+}
+.backLink:hover { color: var(--maroon); }
+
+.pdGrid {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 80px; align-items: start;
+}
+
+/* Media */
+.pdMedia { position: relative; }
+.pdMain {
+    aspect-ratio: 4/5; position: relative; overflow: hidden;
+    background: var(--cream);
+}
+.pdPlaceholder {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(135deg, rgba(201,162,75,0.15) 0 12px, rgba(201,162,75,0.07) 12px 24px), var(--cream);
+}
+.pdThumbs {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px;
+}
+.pdThumb {
+    aspect-ratio: 1; position: relative; cursor: pointer; overflow: hidden;
+    border: 1px solid var(--line); transition: all 220ms;
+}
+.pdThumb.active { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(107,16,40,0.12); }
+.pdThumb:hover { border-color: var(--gold); }
+.videoThumb {
+    display: grid; place-items: center;
+    background: rgba(42,20,22,0.8); color: var(--ivory);
+    border-color: var(--ink);
+}
+
+/* Info */
+.pdInfo { position: sticky; top: 100px; }
+.pdCat { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); }
+.pdTitle {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(32px, 4vw, 52px); line-height: 1.02;
+    margin: 12px 0 18px;
+}
+.pdTitle em { font-style: italic; color: var(--maroon); }
+
+.priceRow {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
+}
+.price { font-family: var(--f-display); font-size: 40px; color: var(--maroon); line-height: 1; }
+.priceUnit { font-size: 20px; color: var(--ink-soft); margin-right: 4px; }
+.pdDesc { color: var(--ink-soft); font-size: 14.5px; line-height: 1.75; margin-bottom: 24px; }
+
+/* Actions */
+.pdActions { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+
+.likeBtn {
+    width: 52px; height: 52px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--ivory);
+    color: var(--ink); display: grid; place-items: center;
+    position: relative; transition: all 240ms; cursor: pointer; flex-shrink: 0;
+}
+.likeBtn:hover { border-color: var(--maroon); color: var(--maroon); }
+.likeBtn.liked { background: var(--maroon); color: var(--ivory); border-color: var(--maroon); }
+.likeCount {
+    position: absolute; top: -6px; right: -6px;
+    min-width: 20px; height: 20px; padding: 0 5px;
+    border-radius: 999px; background: var(--gold); color: var(--ink);
+    font-size: 10px; font-weight: 700; display: grid; place-items: center;
+    font-family: var(--f-mono);
+}
+
+.shareBtn {
+    width: 52px; height: 52px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--ivory);
+    color: var(--ink); display: grid; place-items: center;
+    position: relative; transition: all 240ms; cursor: pointer; flex-shrink: 0;
+}
+.shareBtn:hover { border-color: var(--maroon); color: var(--maroon); }
+.copied {
+    position: absolute; bottom: -34px; left: 50%; transform: translateX(-50%);
+    padding: 6px 10px; background: var(--ink); color: var(--ivory);
+    border-radius: 4px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 220ms;
+}
+.copiedNow .copied { opacity: 1; }
+
+@media (max-width: 900px) { .pdGrid { grid-template-columns: 1fr; gap: 40px; } .pdInfo { position: static; } }

@@ -1,0 +1,115 @@
+.catalogHead {
+    padding: 60px 0 20px;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--line-soft);
+}
+.catalogHead h1 {
+    font-family: var(--f-display); font-weight: 400;
+    font-size: clamp(36px, 5vw, 58px);
+    margin-top: 10px;
+}
+.catalogHead h1 em { font-style: italic; color: var(--maroon); }
+
+.banner {
+    margin-top: 20px; padding: 14px 18px;
+    background: var(--ivory-2);
+    border: 1px solid var(--gold); border-left-width: 3px;
+    font-size: 13px; color: var(--ink-soft);
+}
+
+.catalogBody {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 56px;
+    padding: 44px 0 120px;
+}
+
+/* Filters sidebar */
+.filters { position: sticky; top: 120px; align-self: start; }
+.filters h3 {
+    font-family: var(--f-sans); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold-deep); font-weight: 600; margin-bottom: 14px;
+}
+.filters ul { list-style: none; padding: 0; margin: 0; }
+.filters li {
+    padding: 10px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--line-soft);
+    cursor: pointer; transition: color 220ms; font-size: 14px;
+}
+.filters li:hover { color: var(--maroon); }
+.filters li.active { color: var(--maroon); font-weight: 500; }
+.filters li .count { color: var(--muted); font-size: 11px; font-family: var(--f-mono); }
+.filters li.active .count { color: var(--gold-deep); }
+.divider { height: 1px; background: var(--line); margin: 20px 0; }
+.toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 0; user-select: none; font-size: 14px; }
+.chk { width: 18px; height: 18px; border: 1px solid var(--ink); border-radius: 3px; display: grid; place-items: center; background: var(--ivory); transition: all 220ms; }
+.chk.on { background: var(--maroon); border-color: var(--maroon); color: var(--ivory); }
+
+/* Catalog meta bar */
+.catalogMeta {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;
+}
+.catalogMeta .count { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.sortPill {
+    padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px;
+    background: var(--ivory); font-size: 12px; outline: none; cursor: pointer;
+}
+.sortPill:focus { border-color: var(--gold); }
+
+/* Product grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 36px 28px;
+}
+
+/* Product card */
+.productCard {
+    position: relative; cursor: pointer;
+    transition: transform 400ms cubic-bezier(.2,.7,.2,1);
+}
+.productCard:hover { transform: translateY(-4px); }
+.productImageWrapper {
+    position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--cream);
+}
+.productImage { object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1); }
+.productCard:hover .productImage { transform: scale(1.05); }
+.hoverCta {
+    position: absolute; left: 14px; right: 14px; bottom: 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 14px;
+    background: rgba(251,246,236,0.95); backdrop-filter: blur(6px);
+    color: var(--ink); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    transform: translateY(12px); opacity: 0; transition: all 360ms;
+}
+.productCard:hover .hoverCta { transform: none; opacity: 1; }
+.outOfStockBadge {
+    position: absolute; top: 14px; right: 14px;
+    padding: 6px 12px; background: rgba(42,20,22,0.85);
+    color: var(--ivory); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; border-radius: 999px; backdrop-filter: blur(8px);
+}
+.imagePlaceholder { position: absolute; inset: 0; background: var(--cream); }
+.productInfo { padding-top: 14px; }
+.productCat { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 6px; }
+.productName { font-family: var(--f-display); font-size: 22px; line-height: 1.15; color: var(--ink); margin-bottom: 4px; }
+.productPrice { font-family: var(--f-display); font-size: 20px; color: var(--maroon); }
+
+/* Empty state */
+.emptyState {
+    padding: 80px 20px; text-align: center;
+    border: 1px dashed var(--line); background: var(--ivory-2);
+}
+.emptyState h3 { font-size: 28px; margin-bottom: 8px; }
+.emptyState p { color: var(--muted); }
+
+/* Talk to us card in sidebar */
+.talkCard { margin-top: 8px; }
+.talkCard p { color: var(--muted); font-size: 13px; line-height: 1.7; margin-bottom: 12px; }
+
+/* Search info banner */
+.searchInfo { margin-bottom: 20px; font-size: 13px; color: var(--ink-soft); }
+
+@media (max-width: 900px) { .catalogBody { grid-template-columns: 1fr; gap: 32px; } .filters { position: static; } }

@@ -98,6 +98,69 @@
 @media (max-width: 600px) {
     .metaRow { display: none; }
 }
+
+/* ── Mobile scroll indicator ── */
+.mobileScroll {
+    display: none;
+    position: absolute;
+    bottom: 28px; left: 0; right: 0;
+    z-index: 4;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.mobileOrnWrap {
+    position: relative;
+    width: 52px; height: 52px;
+    display: grid; place-items: center;
+}
+.mobileOrnRing {
+    position: absolute; inset: 0;
+    border-radius: 999px;
+    border: 1px solid rgba(201,162,75,0.5);
+    animation: ornPulse 2.4s ease-out infinite;
+}
+.mobileOrnRing2 {
+    position: absolute; inset: 0;
+    border-radius: 999px;
+    border: 1px solid rgba(201,162,75,0.25);
+    animation: ornPulse 2.4s ease-out infinite 0.8s;
+}
+.mobileOrnStar {
+    animation: ornSpin 12s linear infinite;
+    opacity: 0.9;
+}
+@keyframes ornPulse {
+    0%   { transform: scale(1);    opacity: 0.8; }
+    100% { transform: scale(1.9);  opacity: 0; }
+}
+@keyframes ornSpin {
+    to { transform: rotate(360deg); }
+}
+
+.mobileScrollLine {
+    width: 1px; height: 44px;
+    background: linear-gradient(to bottom, rgba(201,162,75,0.6), transparent);
+    position: relative; overflow: hidden;
+}
+.mobileScrollDot {
+    width: 4px; height: 4px;
+    border-radius: 999px;
+    background: var(--gold);
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    animation: scrollDrop 1.8s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes scrollDrop {
+    0%   { top: -4px; opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .mobileScroll { display: flex; }
+}
 @media (max-width: 960px) { .heroContent { grid-template-columns: 1fr; padding: 100px 32px 60px; gap: 40px; } }
 @media (max-width: 600px) { .heroSide { display: none; } .heroContent { padding: 80px 20px 48px; } }
 

@@ -163,6 +163,25 @@ function Hero({ onCTA }: { onCTA: () => void }) {
                 <span>Scroll ↓</span>
                 <span>Gaya, Bihar · 823001</span>
             </div>
+
+            {/* Mobile scroll indicator */}
+            <div className={styles.mobileScroll}>
+                <div className={styles.mobileOrnWrap}>
+                    <div className={styles.mobileOrnRing} />
+                    <div className={styles.mobileOrnRing2} />
+                    <svg width="28" height="28" viewBox="0 0 100 100" fill="none" className={styles.mobileOrnStar}>
+                        {[0,45,90,135].map(r => (
+                            <rect key={r} x="46" y="8" width="8" height="84"
+                                transform={`rotate(${r} 50 50)`}
+                                fill="rgba(201,162,75,0.9)" rx="2" />
+                        ))}
+                        <circle cx="50" cy="50" r="10" fill="var(--gold)" />
+                    </svg>
+                </div>
+                <div className={styles.mobileScrollLine}>
+                    <div className={styles.mobileScrollDot} />
+                </div>
+            </div>
         </section>
     );
 }

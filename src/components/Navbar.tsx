@@ -81,7 +81,8 @@ export default function Navbar() {
                 <div className={styles.mobileMenu}>
                     {links.map(l => (
                         <Link key={l.href} href={l.href}
-                            className={`${styles.mobileLink} ${isActive(l.href) ? styles.current : ''}`}>
+                            className={`${styles.mobileLink} ${isActive(l.href) ? styles.current : ''}`}
+                            onClick={() => setMobileOpen(false)}>
                             {l.label}
                         </Link>
                     ))}
